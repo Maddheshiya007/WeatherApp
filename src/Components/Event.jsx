@@ -19,7 +19,7 @@ const Event = () => {
     console.log(city)
     const submitHandler = async () => {
         setLoading(true);
-        const resu = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`)
+        const resu = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_API_KEY}`)
 
         setData(resu.data.list);
         setLoading(false);
