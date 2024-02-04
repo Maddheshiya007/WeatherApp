@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import axios from 'axios'
 // import './Header.css'
 import './Header.css'
 
@@ -21,8 +22,8 @@ const Header = () => {
   });
 
   const fetchdata = async () => {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_API_KEY}`)
-    const data = await res.json();
+    const res = await axios.post(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_API_KEY}`)
+    const data = await res.data;
 
     // console.log(data)
     setData({
